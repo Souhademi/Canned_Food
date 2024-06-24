@@ -1,0 +1,14 @@
+  <div class="row">
+                    <div class="col s3">
+                        <label style="font-size: 40px;font-weight: ; ">MEAN CANNED FOODS</label>
+                    </div>
+                    <div>
+                        <div class="col s3 " class="space-beforeleft ">
+
+                            <!-- Assuming your image is located at src/assets/images/example.jpg -->
+                            <img src="../assets/image/f.png " alt="Example Image " width="150 " height="130 ">
+                        </div>
+
+
+
+                    </div>

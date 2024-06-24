@@ -1,0 +1,172 @@
+<style>
+    .column-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 100vh;
+        margin-left: 80px;
+    }
+
+    .container {
+        flex: 5;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 50%;
+        height: auto;
+        padding-top: 300px;
+    }
+</style>
+
+<div class="column-container">
+    <div class="row-container">
+        <div class="container" class="space-beforetop">
+            <label style="font-size: 90px;font-weight: bolder;">MEAN</label>
+        </div>
+        <div class="container" class="space-beforetop">
+            <label style="font-size: 90px;font-weight: bolder;">Canned Foods</label>
+        </div>
+        <div class="container" class="space-beforetop">
+            <label style="font-size: 90px;font-weight: bolder;">Factory</label>
+        </div>
+    </div>
+    <div class="container image-container">
+        <div class="image-container">
+            <img src="../assets/image/canned-food.png" alt="Image">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+
+                    <div class="row">
+                        <div class="col s3" class="space-before"></div>
+
+                        <div class="col s3">
+                            <form #cannedForm="ngForm" (ngSubmit)="onSubmit(cannedForm)">
+                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="cannedService.selectedCanned._id">
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="typeElement" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.typeElement" placeholder="Eg: Sauce" required>
+                                        <label style="font-size: 24px;">Type element :
+                                    <span class="white-text">*</span>
+                                    </label>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="flavor" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.flavor" placeholder="Eg: Lemon" required>
+                                        <label style="font-size: 24px;">Flavor :
+                                      <span class="white-text">*</span>
+                                      </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="weight" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.weight" placeholder="Eg: 35 g" required>
+                                        <label style="font-size: 24px;">Weight :
+                                        <span class="white-text">*</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="nutritionalValue" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.nutritionalValue" placeholder="Eg: 43 cal/100 g" required>
+                                        <label style="font-size: 24px;">Nutritional Value :</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="foodAdditives" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.foodAdditives" placeholder="Eg: color" required>
+                                        <label style="font-size: 24px;">Food additives :</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="protein" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.protein" placeholder="Eg: 3.4 g">
+                                        <label style="font-size: 24px;">Protein :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="sugar" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.sugar" placeholder="Eg: O.2 g">
+                                        <label style="font-size: 24px;">Sugar :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="fats" #name="ngModel" [(ngModel)]="cannedService.selectedCanned.fats" placeholder="Eg: 2 g">
+                                        <label style="font-size: 24px;">Fats :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button class="btn btn-custom right" type="button" (click)="resetForm(cannedForm)">Reset</button>
+                                        <button class="btn btn-custom right" type="submit" [disabled]="!cannedForm.valid">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col s"> </div>
+                        <div class="col s8">
+                            <div class="col s12">
+                                <table class="responsive-table highlight">
+                                    <thead>
+                                        <tr>
+                                            <th>Element type</th>
+                                            <th>Flavor</th>
+                                            <th>Weight</th>
+                                            <th>Nutritional value</th>
+                                            <th>Food additives</th>
+                                            <th>Protein</th>
+                                            <th>Sugar</th>
+                                            <th>Fats</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let cn of cannedService.canneds">
+                                            <td>{{cn.typeElement}}</td>
+                                            <td>{{cn.flavor}}</td>
+                                            <td>{{cn.weight}}</td>
+                                            <td>{{cn.nutritionalValue}}</td>
+                                            <td>{{cn.foodAdditives}}</td>
+                                            <td>{{cn.protein}}</td>
+                                            <td>{{cn.sugar}}</td>
+                                            <td>{{cn.fats}}</td>
+                                            <td>
+                                                <a class="action-btn" (click)="onEdit(cn)">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                                <a class="action-btn" (click)="onDelete(cn._id,cannedForm)">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

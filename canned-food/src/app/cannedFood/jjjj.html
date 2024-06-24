@@ -1,0 +1,48 @@
+<row>
+
+
+
+
+    <column>
+
+        <th>Title</th>
+        <td>{{bk.title}}</td>
+    </column>
+    <column>
+        <th>Author</th>
+        <td>{{bk.author}}</td>
+    </column>
+    <column>
+        <th>PublicationDate</th>
+        <td>{{bk.publicationDate}}</td>
+    </column>
+    <column>
+        <th>Isbn</th>
+        <td>{{bk.isbn}}</td>
+    </column>
+    <column>
+        <th>Genre</th>
+        <td>{{bk.genre}}</td>
+    </column>
+    <column>
+        <th>coverImageUrl</th>
+        <td>{{bk.coverImageUrl}}</td>
+    </column>
+    <column>
+        <th>Summary</th>
+        <td>{{bk.summary}}</td>
+    </column>
+
+    <!-- <td>{{bk.reviews}}</td> -->
+    <td>
+        <a class="action-btn" (click)="onEditBook(bk)">
+            <i class="material-icons">edit</i>
+        </a>
+
+
+        <i> </i>
+        <a class="action-btn" (click)="onDeleteBook(bk._id,bookForm)">
+            <i class="material-icons">delete</i>
+        </a>
+    </td>
+</row>

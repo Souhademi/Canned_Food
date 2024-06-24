@@ -1,0 +1,74 @@
+/* You can add global styles to this file,
+and also import other style files */
+
+form div.input-field input {
+    padding-left: 15px !important;
+    color: #ffffff;
+}
+
+
+/* input.ng-invalid.ng-dirty {
+    border-bottom-color: #007bff !important;
+    box-shadow: 0 1px 0 0 hsl(340, 100%, 50%) !important;
+} */
+
+.input-field>label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.btn-custom,
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: transparent;
+    font-size: 1.1rem;
+    margin: 0px 5px;
+    border: #8cff00 solid 1px;
+    text-transform: none;
+}
+
+div.card {
+    background-color: #c5c2bc;
+    border-radius: 10px;
+}
+
+.vl {
+    border-left: 2px solid #ff0000;
+    height: 400px;
+}
+
+a.action-btn {
+    color: #ff0000;
+    margin: 0px 5px;
+}
+
+a.action-btn:hover {
+    cursor: pointer;
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left: 7%;
+}
+
+html,
+body {
+    background-color: #d7f7b0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/* New styles for hint color and bottom border */
+
+form div.input-field input::placeholder {
+    color: #ff0000;
+    /* Change the hint color to red */
+}
